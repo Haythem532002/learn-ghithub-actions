@@ -50,7 +50,7 @@ jobs:
       - name: Get the ouput from build job
         run: echo ${{needs.build.outputs.message}}
       - name: call workflow
-        uses: ./github/workflows/setup_node.yml
+        uses: Haythem532002/learn-ghithub-actions/.github/workflows/setup_node.yml@main
         with:
           node-version: 20
 
