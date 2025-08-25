@@ -47,4 +47,8 @@ jobs:
     steps:
       - name: Get the ouput from build job
         run: echo ${{needs.build.outputs.message}}
+      - name: call workflow
+        uses: ./github/workflows/setup_node.yml
+        with:
+          node-version: 20
 
