@@ -24,7 +24,7 @@ jobs:
         run: node -v
         
       - name: print env var
-        run: echo ${{ env.DOCKER_USERNAME }}
+        run: echo $DOCKER_USERNAME
         
       - name: print app env
         run: echo $APP_ENV
