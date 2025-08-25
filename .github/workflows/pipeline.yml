@@ -21,7 +21,7 @@ jobs:
         run: node -v
         
       - name: print env var
-        run: echo ${{ envs.DOCKER_USERNAME }}
+        run: echo ${{ env.DOCKER_USERNAME }}
 
       - name: print secret
         run: echo ${{ secrets.DOCKER_PASSWORD }}
