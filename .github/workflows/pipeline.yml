@@ -3,7 +3,12 @@ name: Learn CI/CD Pipeline using Github Actions
 on:
   push:
     branches: main
-
+  workflow_dispatch:
+# on: push
+# on: pull_request
+# on:
+#   schedule:            # cron-like syntax
+#     - cron: "0 0 * * *"  # runs every day at midnight
 jobs:
   build:
     runs-on: ubuntu-latest
