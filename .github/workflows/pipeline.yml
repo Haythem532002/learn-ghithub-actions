@@ -4,6 +4,9 @@ on:
   push:
     branches: main
   workflow_dispatch:
+
+env:                       # 🌍 Global env variables (for all jobs/steps)
+  APP_ENV: production
 # on: push
 # on: pull_request
 # on:
@@ -22,6 +25,10 @@ jobs:
         
       - name: print env var
         run: echo ${{ env.DOCKER_USERNAME }}
+        
+      - name: print app env
+        run: echo ${{ env.APP_ENV }}
 
       - name: print secret
         run: echo ${{ secrets.DOCKER_PASSWORD }}
+
