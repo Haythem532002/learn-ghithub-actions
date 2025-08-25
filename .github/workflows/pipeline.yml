@@ -1,0 +1,14 @@
+name: Learn CI/CD Pipeline using Github Actions
+
+on:
+  push:
+    branches: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout-code@v4
+      - name: Hello World
+        run: echo "Hello World" 
