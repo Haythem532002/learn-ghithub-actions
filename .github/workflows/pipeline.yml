@@ -12,3 +12,5 @@ jobs:
         uses: actions/checkout@v4
       - name: Hello World
         run: echo "Hello World" 
+      - name: check node version
+        run: node -v
