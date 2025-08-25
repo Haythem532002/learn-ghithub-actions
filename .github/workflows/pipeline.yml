@@ -39,7 +39,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: echo "I run only on main branch"
       - id: step1
-        run: echo "msg=Hello From Build Job" >> $GITHUB_OUTPUTS
+        run: echo "msg=Hello From Build Job" >> $GITHUB_OUTPUT
 
   deploy:
     runs-on: ubuntu-latest
