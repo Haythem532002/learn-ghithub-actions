@@ -58,6 +58,14 @@ jobs:
         uses: actions/checkout@v4
       - name: Get the ouput from build job
         run: echo ${{needs.build.outputs.message}}
+      - name: Download Artifact
+        uses: actions/upload-atrifact@v4
+        with:
+          name: myBuildDonwload
+          path: mybuild
+
+      - name: Print file content from the upload artifact
+        run: cat myBuildDownlaod
         
       # - name: call workflow
 
