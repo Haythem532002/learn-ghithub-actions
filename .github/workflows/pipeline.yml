@@ -59,7 +59,7 @@ jobs:
       - name: Get the ouput from build job
         run: echo ${{needs.build.outputs.message}}
       - name: Download Artifact
-        uses: actions/upload-atrifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: myBuildDonwload
           path: mybuild
