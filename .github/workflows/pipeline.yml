@@ -41,6 +41,15 @@ jobs:
       - id: step1
         run: echo "msg=Hello From Build Job" >> $GITHUB_OUTPUT
 
+      - name: create text file
+        run: echo "haythem" >> myfile.txt
+
+      - name: Upload Artifact
+        uses: action/upload-artifact@v4
+        with:
+          name: mybuild
+          path: myfile.txt
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
