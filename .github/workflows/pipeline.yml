@@ -62,10 +62,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: mybuild
-          
+          path: mybuild
 
-      - name: Print file content from the upload artifact
-        run: cat myfile.txt
+      - name: Print file content
+        run: cat mybuild/myfile.txt
         
       # - name: call workflow
 
