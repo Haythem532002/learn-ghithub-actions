@@ -1,0 +1,37 @@
+services:
+  backend:
+    container_name: mybackend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environments:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://databsase:5432/mydb
+      - SPRING_DATASOURCE_USERNAME=user
+      - SPRING_DATASOURCE_PASSWORD=password
+
+    depends_on:
+      - database
+    networks:
+      - mynetwork
+  database:
+    image: postgres:16
+    container_name: mypostgres
+    environments:
+      POSTGRES_USERNAME: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydb
+  networks:
+    - mynetwork
+  volumes:
+    - postgres-data:/var/lib/postgresql/data
+  ports: 
+    - "5432:5432"
+volumes:
+  postgres-data:
+
+network:
+  mynetwork:
+    driver: bridge
+      
